@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PUSHNIK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="monitor-casing">
+    <div id="arcade-bezel">
+      <div id="screen-wrapper">
+        <canvas id="gameCanvas"></canvas>
+        <div id="flash-overlay"></div>
+        <div id="crt-barrel-shader"></div>
+
+        <div id="ui-layer">
+          <div id="start-screen" class="menu-screen">
+            <h1>PUSHNIK</h1>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 25px;">
+              <div style="width:24px;height:24px;background:#e00018;border:2px solid #000; box-shadow: inset 2px 2px #fff;"></div>
+              <div style="width:24px;height:24px;background:#0058f8;border:2px solid #000; box-shadow: inset 2px 2px #fff;"></div>
+              <div style="width:24px;height:24px;background:#00e818;border:2px solid #000; box-shadow: inset 2px 2px #fff;"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="Game.startGame()">START GAME</button>
+            <button class="btn" onclick="Game.openLevelSelect()">LEVEL SELECT</button>
+            <button class="btn info-btn" onclick="Game.showInfo()">ℹ️ INFO</button>
+
+            <div class="instructions">
+              <div><span class="key">ARROWS</span> MOVE CURSOR</div>
+              <div><span class="key">A / Q</span> PUSH LEFT</div>
+              <div><span class="key">D / E</span> PUSH RIGHT</div>
+              <div><span class="key">R</span> RESET LEVEL</div>
+              <div><span class="key">ESC</span> BACK TO MENU</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="info-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>HOW TO PLAY PUSHNIK</h2>
+      <div class="info-section">
+        <h3>🎯 OBJECTIVE</h3>
+        <p>Match adjacent blocks of the same color to clear them from the board. Clear all blocks to complete each level!</p>
+      </div>
+      <div class="info-section">
+        <h3>🎮 CONTROLS</h3>
+        <div class="control-list">
+          <div><span class="key">ARROWS</span> Move cursor</div>
+          <div><span class="key">A / Q</span> Push blocks left</div>
+          <div><span class="key">D / E</span> Push blocks right</div>
+          <div><span class="key">R</span> Reset current level</div>
+          <div><span class="key">ESC</span> Back to main menu</div>
+        </div>
+      </div>
+      <div class="info-section">
+        <h3>💡 TIPS</h3>
+        <ul>
+          <li>Blocks fall with gravity when space below is clear</li>
+          <li>Plan your moves carefully - blocks can't be pulled back!</li>
+          <li>Match 2 or more blocks of the same color</li>
+          <li>Complete levels quickly for bonus time</li>
+          <li>Each level has a time limit - don't run out!</li>
+        </ul>
+      </div>
+      <div class="info-section">
+        <h3>🏆 SCORING</h3>
+        <p>• Each matched block: 100 points</p>
+        <p>• Time bonus: Remaining seconds × 10</p>
+        <p>• High scores are saved automatically</p>
+      </div>
+      <button class="btn btn-primary" onclick="Game.hideInfo()">CLOSE</button>
+    </div>
+  </div>
+
+  <script src="script-part1.js"></script>
+  <script src="script-part2.js"></script>
+  <script src="script-part3.js"></script>
+  <script src="script-part4.js"></script>
+  <script src="script-part5.js"></script>
+</body>
+
+</html>
